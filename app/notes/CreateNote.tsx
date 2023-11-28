@@ -1,5 +1,13 @@
 'use client';
 
+// export default function Test() {
+//   return (
+//     <div>
+//       <h1>Create Note</h1>
+//     </div>
+//   );
+// }
+
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -10,6 +18,13 @@ export default function CreateNote() {
     const router = useRouter();
 
     const create = async () => {
+        // const db = new PocketBase('http://127.0.0.1:8090');
+
+        // await db.records.create('notes', {
+        //   title,
+        //   content,
+        // });
+
         await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
             method: 'POST',
             headers: {
